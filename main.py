@@ -51,7 +51,7 @@ class GUI:
 
         # Kick off the update thread
         self.update_thread = threading.Thread(target=NetworkInfo.update_info, args=(self,))
-        self.update_thread.setDaemon(True)
+        self.update_thread.daemon = True
         self.update_thread.start()
 
     def build_gui(self):
